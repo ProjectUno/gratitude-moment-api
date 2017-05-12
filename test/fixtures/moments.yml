@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  phone: MyString
+  body: MyString
+  twilio_id: MyString
+
+two:
+  user: two
+  phone: MyString
+  body: MyString
+  twilio_id: MyString
