@@ -8,7 +8,6 @@ class Moment < ApplicationRecord
   # end
 
   def process_message
-    debugger
     @user = User.find_by_phone(phone)
     if @user
     	self.update(user: @user)
