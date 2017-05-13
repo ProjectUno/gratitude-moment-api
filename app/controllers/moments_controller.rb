@@ -41,7 +41,7 @@ class MomentsController < ApplicationController
   end
 
   def process_sms
-    Moment.create(body: params[:Body].strip, phone: params[:From], twilio_id: params[:MessageSid])
+    @moment = Moment.create!(body: params[:Body].strip, phone: params[:From], twilio_id: params[:MessageSid])
     respond_to do |format|
       format.xml  { head :ok }
       format.json { head :ok }
