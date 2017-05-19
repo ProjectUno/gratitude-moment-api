@@ -1,10 +1,11 @@
 class MomentsController < ApplicationController
   before_action :set_moment, only: [:show, :update, :destroy]
+  skip_before_action :authenticate, only: [:process_sms]
 
   # GET /moments
   # GET /moments.json
   def index
-    @moments = Moment.all
+    @moments = @current_user.moments
   end
 
   # GET /moments/1
