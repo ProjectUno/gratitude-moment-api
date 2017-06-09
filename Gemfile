@@ -26,6 +26,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors'
 gem "active_model_serializers", github:"rails-api/active_model_serializers", branch: '0-9-stable'
 
+#delayed jobs
+gem 'delayed_job_active_record'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

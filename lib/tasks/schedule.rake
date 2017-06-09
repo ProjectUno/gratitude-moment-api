@@ -4,15 +4,8 @@ task send_text: :environment do
 	puts "Daily Reminder CRON JOB /////////////////////////////////////////////////////////////////////////////////"
   @users = User.all
   @users.each do |user|
-    puts user.name
-  	if user.phone
-			@client = Twilio::REST::Client.new
-      @sent_message = @client.messages.create(
-		      from: Rails.application.secrets.twilio_from,
-		      to: user.phone, # assumes that number is from US
-		      body: "What are you grateful for?"
-		    )
-  	end
+		puts user.name
+    user.schedule_texts
   end
 	puts "Daily Reminder CRON JOB /////////////////////////////////////////////////////////////////////////////////"
 	puts "Daily Reminder CRON JOB /////////////////////////////////////////////////////////////////////////////////"
